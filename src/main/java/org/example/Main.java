@@ -37,13 +37,14 @@ public class Main extends PApplet {
     }
 
      class Ball{
-        private int x,increment;
-        private float height;
+        private int x;
+        private final int increment;
+        private final float y;
 
 
-        public Ball(int increment,float height) {
+        public Ball(int increment,float y) {
             this.increment = increment;
-            this.height=height;
+            this.y = y;
             this.x=0;
         }
 
@@ -52,7 +53,7 @@ public class Main extends PApplet {
         }
 
         private void drawEllipse() {
-            ellipse(x, HEIGHT* height, DIAMETER, DIAMETER);
+            ellipse(x, HEIGHT* y, DIAMETER, DIAMETER);
             update();
         }
     }
